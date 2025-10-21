@@ -42,6 +42,7 @@ header{
   backdrop-filter:saturate(1.2) blur(6px);
   background:rgba(255,255,255,.9);
   border-bottom:1px solid rgba(0,0,0,.06);
+  transition: all .3s ease; /* Transição para o efeito de sombra */
 }
 .nav{
   display:flex;
@@ -67,6 +68,7 @@ header{
   font-weight:600;
   margin:0 var(--spacing-sm);
   padding: 5px 0;
+  transition: color .2s ease;
 }
 .nav-links a:hover{
   color:var(--color-accent);
@@ -95,10 +97,10 @@ header{
   font-weight:700;
   cursor:pointer;
   transition: background-color .3s ease;
-  display: inline-flex; /* <<< MUDANÇA AQUI: de 'flex' para 'inline-flex' */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px; /* Espaço entre o ícone e o texto */
+  gap: 8px;
 }
 .cta:hover{background:var(--color-blue)}
 
@@ -197,6 +199,56 @@ header{
 
 .icon{font-size:28px;margin-bottom:8px; color:var(--color-accent)}
 
+/* Seção Sobre Mim */
+.about-me {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.about-photo img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+}
+.about-text h2 {
+  text-align: left;
+}
+.about-text p {
+  line-height: 1.6;
+}
+
+
+/* Seção Depoimentos */
+.testimonial-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.05);
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-card .quote {
+  font-style: italic;
+  flex-grow: 1; 
+  margin: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+.testimonial-card .author {
+  margin-top: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.testimonial-card .author span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  color: #777;
+}
+
 /* Alternating Section Backgrounds */
 .alt{background:var(--color-white)}
 .alt2{background:var(--color-bg)}
@@ -216,7 +268,7 @@ header{
   opacity:.75;
 }
 
-/* --- Floating Buttons --- */
+/* Floating Buttons */
 .floating-buttons{
   position: fixed;
   right: var(--spacing-md);
@@ -234,8 +286,6 @@ header{
   width: 50px;
   height: 50px;
   border-radius: var(--border-radius-pill);
-  color: var(--color-white);
-  font-size: 24px;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
@@ -247,7 +297,6 @@ header{
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Novo estilo para as imagens dentro dos botões flutuantes */
 .floating-btn-img {
   width: 100%;
   height: 100%;
@@ -263,7 +312,6 @@ header{
   .cards-2{grid-template-columns:1fr}
   .hero h1{font-size:30px}
 
-  /* Mobile Navigation */
   .nav-links{
     display: none;
     flex-direction: column;
@@ -289,6 +337,9 @@ header{
   }
 
   .hamburger{display:block}
+  
+  .about-me { flex-direction: column; text-align: center; }
+  .about-text h2 { text-align: center; }
 }
 
 @media (max-width: 620px){
